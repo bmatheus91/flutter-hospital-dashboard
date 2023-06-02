@@ -3,13 +3,12 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import 'package:flutter_hospital_dashboard/appointment_card.dart';
+import 'package:flutter_hospital_dashboard/routes.dart';
 import 'patient_appointment_summary_card.dart';
 import 'chart_painter.dart';
 
 class HospitalDashboard extends StatefulWidget {
-  const HospitalDashboard({super.key, required this.title});
-
-  final String title;
+  const HospitalDashboard({super.key});
 
   @override
   State<HospitalDashboard> createState() => _HospitalDashboardState();
@@ -36,6 +35,12 @@ class _HospitalDashboardState extends State<HospitalDashboard> {
         backgroundColor: primaryColor,
         title: const Text('Dashboard'),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Navigator.pushNamed(context, ApplicationRoutes.settings);
+            },
+          ),
           const Icon(Icons.notifications),
           Container(
             width: 50,

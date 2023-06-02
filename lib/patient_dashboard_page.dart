@@ -2,21 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'patient_appointment_summary_card.dart';
 
-class PatientDetailPage extends StatefulWidget {
-  const PatientDetailPage({super.key, required this.title});
-
-  final String title;
+class PatientDashboardPage extends StatefulWidget {
+  const PatientDashboardPage({super.key});
 
   @override
-  State<PatientDetailPage> createState() => _PatientDetailPageState();
+  State<PatientDashboardPage> createState() => _PatientDashboardPageState();
 }
 
-class _PatientDetailPageState extends State<PatientDetailPage> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
+class _PatientDashboardPageState extends State<PatientDashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
