@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../home/patient_appointment_summary_card.dart';
-import '../widgets/custom_bottom_app_bar.dart';
+import '../hospital/patient_appointment_summary_card.dart';
+
 import '../widgets/icon_button_with_circle_border.dart';
 import '../widgets/room_summary.dart';
 import 'health_data.dart';
@@ -53,18 +53,20 @@ class _PatientDashboardState extends State<PatientDashboard> {
                           const Avatar(width: 40, height: 40),
                           const Expanded(
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8),
+                              padding: EdgeInsets.symmetric(horizontal: 8),
                               child: ListTile(
                                 title: Text(
-                                  'name',
-                                  style: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
+                                  'Paciente Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 2,
                                 ),
                                 subtitle: Text(
-                                  'id',
-                                  style: const TextStyle(
+                                  'QWJSD12389',
+                                  style: TextStyle(
                                     color: Colors.white,
                                   ),
                                 ),
@@ -113,7 +115,7 @@ class _PatientDashboardState extends State<PatientDashboard> {
                       const SizedBox(height: 15),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
+                        children: const [
                           HealthData(
                             title: 'Idade: ',
                             value: '27 anos',
@@ -127,7 +129,7 @@ class _PatientDashboardState extends State<PatientDashboard> {
                       const SizedBox(height: 15),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
+                        children: const [
                           HealthData(
                             title: 'Altura: ',
                             value: '178 cm',
@@ -156,9 +158,9 @@ class _PatientDashboardState extends State<PatientDashboard> {
                 const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     HealthInformationCard(
-                      color: const Color(0xFFff0064),
+                      color: Color(0xFFff0064),
                       icon: Icon(
                         Icons.water_drop_rounded,
                         color: Colors.white,
@@ -168,7 +170,7 @@ class _PatientDashboardState extends State<PatientDashboard> {
                       measurement: 'mm/Hg',
                     ),
                     HealthInformationCard(
-                      color: const Color(0xFF0056fe),
+                      color: Color(0xFF0056fe),
                       icon: Icon(
                         Icons.monitor_heart_rounded,
                         color: Colors.white,
@@ -178,7 +180,7 @@ class _PatientDashboardState extends State<PatientDashboard> {
                       measurement: 'por min',
                     ),
                     HealthInformationCard(
-                      color: const Color(0xFF00d87c),
+                      color: Color(0xFF00d87c),
                       icon: Icon(
                         Icons.person_2,
                         color: Colors.white,
@@ -207,7 +209,6 @@ class _PatientDashboardState extends State<PatientDashboard> {
           ),
         ),
       ),
-      bottomNavigationBar: const CustomBottomAppBar(),
     );
   }
 

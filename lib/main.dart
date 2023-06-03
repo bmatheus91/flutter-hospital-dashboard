@@ -1,37 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hospital_dashboard/patient/patient_dashboard.dart';
 import 'package:flutter_hospital_dashboard/routes.dart';
+import 'package:flutter_hospital_dashboard/splash_page.dart';
+import 'package:provider/provider.dart';
 
-import 'home/hospital_dashboard.dart';
+import 'application_settings.dart';
+import 'custom_route_observer.dart';
+import 'hospital/hospital_dashboard.dart';
 import 'settings/settings_screen.dart';
 import 'setup/setup_flow.dart';
+import 'widgets/custom_bottom_app_bar.dart';
 
 Color primaryColor = const Color(0xff0074ff);
 typedef RouteConfiguration = Route<dynamic>? Function(RouteSettings)?;
 void main() {
-  runApp(const MyApp());
+  runApp(Application());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Application extends StatelessWidget {
+  Application({super.key});
+
+  final pageController = PageController(initialPage: 0, keepPage: true);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return BlocProvider(
+      create: (_) => ApplicationSettings(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        navigatorObservers: [CustomRouteObserver()],
+        onGenerateRoute: onGenerateRoute(),
       ),
-      onGenerateRoute: onGenerateRoute(),
     );
   }
 
   RouteConfiguration onGenerateRoute() => (settings) {
         late Widget page;
-
-        if (settings.name == ApplicationRoutes.home) {
+        if (settings.name == ApplicationRoutes.root) {
+          page = const SplashPage();
+        } else if (settings.name == ApplicationRoutes.home) {
           page = const HospitalDashboard();
-        } else if (settings.name!.startsWith(ApplicationRoutes.patient)) {
+        } else if (settings.name == ApplicationRoutes.patient) {
           page = const PatientDashboard();
         } else if (settings.name == ApplicationRoutes.settings) {
           page = const SettingsScreen();

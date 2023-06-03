@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../routes.dart';
+
 Color primaryColor = const Color(0xff0074ff);
 
 class PatientAppointmentSummaryCard extends StatelessWidget {
@@ -19,7 +21,9 @@ class PatientAppointmentSummaryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, ApplicationRoutes.patient);
+      },
       child: Container(
         padding: const EdgeInsets.only(left: 8),
         decoration: BoxDecoration(

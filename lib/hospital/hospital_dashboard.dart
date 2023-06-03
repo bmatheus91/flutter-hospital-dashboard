@@ -2,7 +2,6 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-import 'package:flutter_hospital_dashboard/routes.dart';
 import 'package:flutter_hospital_dashboard/widgets/custom_bottom_app_bar.dart';
 import '../patient/appointment_card.dart';
 import 'patient_appointment_summary_card.dart';
@@ -36,12 +35,6 @@ class _HospitalDashboardState extends State<HospitalDashboard> {
         backgroundColor: primaryColor,
         title: const Text('Dashboard'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              Navigator.pushNamed(context, ApplicationRoutes.settings);
-            },
-          ),
           const Icon(Icons.notifications),
           Container(
             width: 50,

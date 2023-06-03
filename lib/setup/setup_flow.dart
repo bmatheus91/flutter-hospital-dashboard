@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hospital_dashboard/routes.dart';
 
+import '../custom_route_observer.dart';
+import '../widgets/custom_bottom_app_bar.dart';
 import 'finished_page.dart';
 import 'select_device_page.dart';
 import 'waiting_page.dart';
@@ -25,9 +27,13 @@ class _SetupFlowState extends State<SetupFlow> {
         appBar: _buildFlowAppBar(),
         body: Navigator(
           key: _navigatorKey,
+          observers: [
+            CustomRouteObserver(routePrefix: ApplicationRoutes.prefixSetup)
+          ],
           initialRoute: widget.route,
           onGenerateRoute: onGenerateRoute(),
         ),
+        bottomNavigationBar: const CustomBottomAppBar(),
       ),
     );
   }
@@ -38,7 +44,7 @@ class _SetupFlowState extends State<SetupFlow> {
         onPressed: _onExitPressed,
         icon: const Icon(Icons.chevron_left),
       ),
-      title: const Text('Bulb Setup'),
+      title: const Text('Device Setup'),
     );
   }
 
@@ -79,6 +85,7 @@ class _SetupFlowState extends State<SetupFlow> {
 
   RouteConfiguration onGenerateRoute() => (settings) {
         late Widget page;
+
         switch (settings.name) {
           case ApplicationRoutes.setupStartPage:
             page = WaitingPage(

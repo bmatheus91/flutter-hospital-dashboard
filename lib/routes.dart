@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 typedef RouteConfiguration<T> = Route<T>? Function(RouteSettings)?;
 
 class ApplicationRoutes {
+  // Splash Screen
+  static const root = '/';
+
+  // Not Found
+  static const notFound = '/not_found';
+
   // Home
-  static const home = '/';
+  static const home = '/hospital_dashboard';
 
   // Settings
   static const settings = '/settings';

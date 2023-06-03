@@ -35,7 +35,7 @@ class SelectDevicePage extends StatelessWidget {
                     onDeviceSelected('22n483nk5834');
                   },
                   child: const Text(
-                    'Bulb 22n483nk5834',
+                    'Device 22n483nk5834',
                     style: TextStyle(
                       fontSize: 24,
                     ),
