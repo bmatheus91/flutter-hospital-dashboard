@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hospital_dashboard/patient/patient_dashboard.dart';
 import 'package:flutter_hospital_dashboard/routes.dart';
-import 'package:flutter_hospital_dashboard/splash_page.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_hospital_dashboard/widgets/splash_page.dart';
 
 import 'application_settings.dart';
 import 'custom_route_observer.dart';
 import 'hospital/hospital_dashboard.dart';
 import 'settings/settings_screen.dart';
 import 'setup/setup_flow.dart';
-import 'widgets/custom_bottom_app_bar.dart';
 
 Color primaryColor = const Color(0xff0074ff);
 typedef RouteConfiguration = Route<dynamic>? Function(RouteSettings)?;

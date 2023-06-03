@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hospital_dashboard/widgets/custom_bottom_app_bar.dart';
 import '../patient/appointment_card.dart';
 import 'patient_appointment_summary_card.dart';
-import '../chart_painter.dart';
+import 'chart_painter.dart';
 
 class HospitalDashboard extends StatefulWidget {
   const HospitalDashboard({super.key});

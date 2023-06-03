@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hospital_dashboard/application_settings.dart';
 
-import 'routes.dart';
+import '../routes.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});

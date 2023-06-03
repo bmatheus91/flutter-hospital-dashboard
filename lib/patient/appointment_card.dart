@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../current_data_chart_painter.dart';
+import '../hospital/current_data_chart_painter.dart';
 
 class AppointmentCard extends StatelessWidget {
   const AppointmentCard({super.key});
