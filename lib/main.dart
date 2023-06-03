@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hospital_dashboard/patient_dashboard_page.dart';
+import 'package:flutter_hospital_dashboard/patient/patient_dashboard.dart';
 import 'package:flutter_hospital_dashboard/routes.dart';
 
-import 'home/home_screen.dart';
-import 'hospital_dashboard.dart';
+import 'home/hospital_dashboard.dart';
 import 'settings/settings_screen.dart';
 import 'setup/setup_flow.dart';
 
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
         if (settings.name == ApplicationRoutes.home) {
           page = const HospitalDashboard();
         } else if (settings.name!.startsWith(ApplicationRoutes.patient)) {
-          page = const PatientDashboardPage();
+          page = const PatientDashboard();
         } else if (settings.name == ApplicationRoutes.settings) {
           page = const SettingsScreen();
         } else if (settings.name!.startsWith(ApplicationRoutes.prefixSetup)) {

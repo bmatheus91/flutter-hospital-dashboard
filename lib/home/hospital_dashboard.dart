@@ -2,10 +2,11 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-import 'package:flutter_hospital_dashboard/appointment_card.dart';
 import 'package:flutter_hospital_dashboard/routes.dart';
+import 'package:flutter_hospital_dashboard/widgets/custom_bottom_app_bar.dart';
+import '../patient/appointment_card.dart';
 import 'patient_appointment_summary_card.dart';
-import 'chart_painter.dart';
+import '../chart_painter.dart';
 
 class HospitalDashboard extends StatefulWidget {
   const HospitalDashboard({super.key});
@@ -56,7 +57,8 @@ class _HospitalDashboardState extends State<HospitalDashboard> {
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                          'https://api.dicebear.com/6.x/bottts/png'),
+                        'https://api.dicebear.com/6.x/bottts/png',
+                      ),
                     ),
                   ),
                 ),
@@ -205,38 +207,7 @@ class _HospitalDashboardState extends State<HospitalDashboard> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        elevation: 0,
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.label_outline,
-                size: 35,
-                color: primaryColor,
-              ),
-              const Icon(
-                Icons.ac_unit,
-                color: Colors.grey,
-                size: 30,
-              ),
-              const Icon(
-                Icons.tune,
-                size: 30,
-                color: Colors.grey,
-              ),
-              const Icon(
-                Icons.perm_identity,
-                color: Colors.grey,
-                size: 30,
-              ),
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: const CustomBottomAppBar(),
     );
   }
 
